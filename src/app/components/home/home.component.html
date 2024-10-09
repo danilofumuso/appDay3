@@ -9,6 +9,7 @@
             {{ posts[indexRandom].body }}
           </p>
           <p *ngFor="let tag of posts[indexRandom].tags">{{ tag }}</p>
+          <a href="#" class="btn btn-outline-primary">Details</a>
         </div>
       </div>
     </div>
@@ -24,6 +25,7 @@
           <h5 class="card-title">{{ post.title }}</h5>
           <p class="card-text">{{ post.body }}</p>
           <p *ngFor="let tag of post.tags">{{ tag }}</p>
+          <a href="#" class="btn btn-outline-primary">Details</a>
         </div>
       </div>
     </div>
