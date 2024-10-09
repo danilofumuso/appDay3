@@ -11,6 +11,7 @@ export class HomeComponent implements OnInit {
   //implements OnInit implementa l'interfaccia che ha come metodo ngOnInit così non si sbaglia a scriverlo!
   posts: iPost[] = [];
   indexRandom: number = 0;
+  shuffledPosts: iPost[] = [];
 
   ngOnInit() {
     fetch('db.json')
@@ -24,6 +25,17 @@ export class HomeComponent implements OnInit {
       .then((data) => {
         this.posts = data.posts; //non faccio push ma uso l'uguale
         console.log(this.posts); //mi da l'array che mi aspettavo
+
+        //Fisher-Yates Sorting Algorithm //questa parte mi serve a mescolare gli elementi dell'array posts
+        const shuffle = (array: iPost[]) => {
+          for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+          }
+          return array;
+        };
+        this.shuffledPosts = shuffle(this.posts);
+
         this.indexRandom = Math.floor(Math.random() * this.posts.length); // indice random per avere un post casuale!
         console.log(this.indexRandom);
       })
