@@ -26,7 +26,10 @@ export class HomeComponent implements OnInit {
         this.posts = data.posts; //non faccio push ma uso l'uguale
         console.log(this.posts); //mi da l'array che mi aspettavo
 
-        //Fisher-Yates Sorting Algorithm //questa parte mi serve a mescolare gli elementi dell'array posts
+        this.indexRandom = Math.floor(Math.random() * this.posts.length); // indice random per avere un post casuale!
+        console.log(this.indexRandom);
+
+        //Fisher-Yates Sorting Algorithm // algoritmo per fare lo shuffle di un array!
         const shuffle = (array: iPost[]) => {
           for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
@@ -34,10 +37,10 @@ export class HomeComponent implements OnInit {
           }
           return array;
         };
-        this.shuffledPosts = shuffle(this.posts);
 
-        this.indexRandom = Math.floor(Math.random() * this.posts.length); // indice random per avere un post casuale!
-        console.log(this.indexRandom);
+        this.shuffledPosts = structuredClone(this.posts); //creo una deep copy dell'array posts e poi faccio lo shuffle sull'array shuffledPosts!
+        this.shuffledPosts = shuffle(this.shuffledPosts);
+        console.log(this.shuffledPosts);
       })
       .catch((err) => {
         console.log('Error', err);
