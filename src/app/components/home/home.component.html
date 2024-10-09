@@ -2,61 +2,54 @@
   <div class="row justify-content-center">
     <div class="col col-6">
       <div class="card mt-5">
-        <div class="card-body" *ngFor="let post of posts">
-          <h5 class="card-title">{{ post.title }}</h5>
+        <div class="card-body">
+          <h5 class="card-title">{{ posts[indexRandom].title }}</h5>
           <p class="card-text">
-            {{ post.body }}
+            {{ posts[indexRandom].body }}
           </p>
-          <p>{{ post.tags }}</p>
+          <p>{{ posts[indexRandom].tags }}</p>
         </div>
       </div>
     </div>
   </div>
 </div>
+
 <div class="container">
   <div class="row justify-content-center">
     <h3 class="text-center mt-5">Potrebbero piacerti questi post</h3>
     <div class="col col-3">
       <div class="card mt-5">
-        <div class="card-body" *ngFor="let post of posts">
-          <h5 class="card-title">{{ post.title }}</h5>
-          <p class="card-text">
-            {{ post.body }}
-          </p>
-          <p>{{ post.tags }}</p>
+        <div class="card-body">
+          <h5 class="card-title"></h5>
+          <p class="card-text"></p>
+          <p></p>
         </div>
       </div>
     </div>
     <div class="col col-3">
       <div class="card mt-5">
-        <div class="card-body" *ngFor="let post of posts">
-          <h5 class="card-title">{{ post.title }}</h5>
-          <p class="card-text">
-            {{ post.body }}
-          </p>
-          <p>{{ post.tags }}</p>
+        <div class="card-body">
+          <h5 class="card-title"></h5>
+          <p class="card-text"></p>
+          <p></p>
         </div>
       </div>
     </div>
     <div class="col col-3">
       <div class="card mt-5">
-        <div class="card-body" *ngFor="let post of posts">
-          <h5 class="card-title">{{ post.title }}</h5>
-          <p class="card-text">
-            {{ post.body }}
-          </p>
-          <p>{{ post.tags }}</p>
+        <div class="card-body">
+          <h5 class="card-title"></h5>
+          <p class="card-text"></p>
+          <p></p>
         </div>
       </div>
     </div>
     <div class="col col-3">
       <div class="card mt-5">
-        <div class="card-body" *ngFor="let post of posts">
-          <h5 class="card-title">{{ post.title }}</h5>
-          <p class="card-text">
-            {{ post.body }}
-          </p>
-          <p>{{ post.tags }}</p>
+        <div class="card-body">
+          <h5 class="card-title"></h5>
+          <p class="card-text"></p>
+          <p></p>
         </div>
       </div>
     </div>
